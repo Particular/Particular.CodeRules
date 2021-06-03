@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net472;netcoreapp3.1</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Description>Analyzer testing library for use in Particular Software C# projects.</Description>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- this package can only be upgraded when we drop support for older versions of Visual Studio -->
+    <!-- see https://docs.microsoft.com/en-us/visualstudio/extensibility/roslyn-version-support -->
+    <!-- cannot upgrade to 2.10.0 - see https://github.com/dotnet/roslyn-analyzers/issues/1803 -->
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="2.4.0" />
+    <PackageReference Include="Particular.Packaging" Version="1.2.1" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>

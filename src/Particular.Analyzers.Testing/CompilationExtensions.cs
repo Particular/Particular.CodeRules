@@ -1,12 +1,12 @@
-﻿namespace Particular.Analyzers.Tests.Helpers
+﻿namespace NServiceBus.Core.Analyzer.Tests.Helpers
 {
     using System;
     using System.Collections.Generic;
     using System.Collections.Immutable;
     using System.IO;
     using System.Linq;
-    using System.Threading.Tasks;
     using System.Threading;
+    using System.Threading.Tasks;
     using Microsoft.CodeAnalysis;
     using Microsoft.CodeAnalysis.Diagnostics;
 
@@ -37,7 +37,7 @@
 
             var diagnostics = await compilation
                 .WithAnalyzers(ImmutableArray.Create(analyzer), analysisOptions)
-                .GetAnalyzerDiagnosticsAsync(cancellationToken);
+                .GetAnalyzerDiagnosticsAsync(cancellationToken).ConfigureAwait(false);
 
             if (exceptions.Any())
             {
